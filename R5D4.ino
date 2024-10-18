@@ -89,10 +89,6 @@ void loop() {
     }
   }
   
-  if (newData=='3' && detectWall()<=10){
-      ACTIVE_RIGHT=LOW;
-      ACTIVE_LEFT=LOW;
-  }
   // Codigo para controlar la cabeza
    moveHead();
 
