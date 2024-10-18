@@ -68,6 +68,10 @@ void loop() {
       ACTIVE_LEFT = HIGH;
       ACTIVE_REVERSE_RIGHT=HIGH;
     }
+    else{
+      ACTIVE_LEFT = HIGH;
+      ACTIVE_RIGHT=HIGH;
+    }
   }
   // Para ir a la izquierda
   if ( newData == '3' || newData == '1') {
@@ -85,6 +89,10 @@ void loop() {
     }
   }
   
+  if (newData=='3' && detectWall()<=10){
+      ACTIVE_RIGHT=LOW;
+      ACTIVE_LEFT=LOW;
+  }
   // Codigo para controlar la cabeza
    moveHead();
 
