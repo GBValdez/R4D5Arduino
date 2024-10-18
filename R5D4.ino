@@ -50,12 +50,7 @@ void loop() {
   int ACTIVE_REVERSE_LEFT = LOW;
   int ACTIVE_REVERSE_RIGHT=LOW;
   
-  if(izqRayCast){
-    sRaycast.write(45);
-  }else{
-    sRaycast.write(135);
-  }
-  izqRayCast=!izqRayCast;
+
 
   // Obtenemos la data del bluetooth
   if (BT.available() > 0) {
@@ -72,6 +67,13 @@ void loop() {
       ACTIVE_LEFT = HIGH;
       ACTIVE_RIGHT=HIGH;
     }
+
+    if(izqRayCast){
+        sRaycast.write(45);
+    }else{
+      sRaycast.write(135);
+    }
+    izqRayCast=!izqRayCast;
   }
   // Para ir a la izquierda
   if ( newData == '3' || newData == '1') {
